@@ -3,7 +3,7 @@ Set up n8n via PM2
 ### OS Updates
 Before doing anything else, update your operating system by running these two commands:
 ```
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 ```
 #
 ## Prerequisites
