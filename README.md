@@ -35,12 +35,12 @@ sudo nano n8n.conf
 Now insert a copy of the below example configuration and replace
 ```
 server {
-    server_name subdomain.example.com;
+    server_name <domain name>;
+    listen 80;
     location / {
         proxy_pass http://localhost:5678;
-        proxy_http_version 1.1;
         proxy_set_header Connection '';
-        proxy_set_header Host $host;
+        proxy_http_version 1.1;
         chunked_transfer_encoding off;
         proxy_buffering off;
         proxy_cache off;
