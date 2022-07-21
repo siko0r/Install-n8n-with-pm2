@@ -19,7 +19,7 @@ sudo apt-get install nodejs -y
 ### Install NGINX
 NGINX server and the SSL configuration requires
 ```
-sudo apt-get install nginx
+sudo apt-get install nginx -y
 ```
 #
 ### Check Status of NGINX
