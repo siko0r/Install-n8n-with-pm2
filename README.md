@@ -114,3 +114,5 @@ module.exports = {
     }]
 }
 ```
+#### Start with pm2 config
+```pm2 start ecosystem.config.js```
