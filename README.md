@@ -98,6 +98,7 @@ export EXECUTIONS_PROCESS="main" (default is 'own')
 ```
 
 ### pm2 config
+create pm2 config with `pm2 init simple` replce with below code
 ```
 module.exports = {
     apps : [{
