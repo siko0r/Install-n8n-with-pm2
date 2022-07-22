@@ -104,12 +104,13 @@ module.exports = {
     apps : [{
         name   : "n8n",
         env: {
-	    GENERIC_TIMEZONE:"Asia/Kolkata",
-	    N8N_BASIC_AUTH_ACTIVE:"false",
-	    WEBHOOK_URL:"https://n8n.domain.in/",
-	    N8N_HOST:"n8n.domain.in",
-	    EXECUTIONS_PROCESS:"main",
-	    N8N_EDITOR_BASE_URL:"https://n8n.domain.in/"
+            GENERIC_TIMEZONE: "Asia/Kolkata",
+            N8N_BASIC_AUTH_ACTIVE:false,
+            WEBHOOK_URL: "https://n8n.domain.in/",
+            N8N_HOST: "n8n.domain.in/",
+            EXECUTIONS_PROCESS: "main",
+            N8N_PROTOCOL: "https",
+            N8N_EDITOR_BASE_URL: "n8n.domain.in/",
         }
     }]
 }
