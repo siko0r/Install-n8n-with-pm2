@@ -81,22 +81,6 @@ pm2 startup
 pm2 restart n8n
 ```
 #
-### (Optional ) Setup SMTP to Invite Users
-
-```
-export N8N_EMAIL_MODE="smtp"
-export N8N_SMTP_HOST="smtp.gmail.com"
-export N8N_SMTP_PORT="465"
-export N8N_SMTP_USER="test@testmail.com"
-export N8N_SMTP_PASS="yourpassword"
-export N8N_SMTP_SSL="true"
-export GENERIC_TIMEZONE="Asia/Kolkata"
-export N8N_BASIC_AUTH_ACTIVE="false"
-export WEBHOOK_URL="https://n8n.domain.in/"
-export N8N_HOST="n8n.domain.in"
-export EXECUTIONS_PROCESS="main" (default is 'own')
-```
-
 ### pm2 config
 create pm2 config with `pm2 init simple` replce with below code
 ```
@@ -104,16 +88,26 @@ module.exports = {
     apps : [{
         name   : "n8n",
         env: {
-            GENERIC_TIMEZONE: "Asia/Kolkata",
+            N8N_EMAIL_MODE:"smtp",
+            N8N_SMTP_HOST:"smtp.gmail.com",
+            N8N_SMTP_PORT:"465",
+            N8N_SMTP_USER:"name@mail.com",
+            N8N_SMTP_PASS:"app_password",
+            N8N_SMTP_SSL:"true",
+            GENERIC_TIMEZONE:"Asia/Kolkata",
+            TZ:"Asia/Kolkata",
             N8N_BASIC_AUTH_ACTIVE:false,
-            WEBHOOK_URL: "https://n8n.domain.in/",
-            N8N_HOST: "n8n.domain.in/",
-            EXECUTIONS_PROCESS: "main",
-            N8N_PROTOCOL: "https",
-            N8N_EDITOR_BASE_URL: "n8n.domain.in/",
+            WEBHOOK_URL:"https://n8n.domain.in/",
+            N8N_HOST:"https://n8n.domain.in/",
+            N8N_PROTOCOL:"https",
+            N8N_EDITOR_BASE_URL:"https://n8n.domain.in/",
+            NODE_FUNCTION_ALLOW_EXTERNAL:"moment,lodash"
         }
     }]
 }
 ```
 #### Start with pm2 config
 ```pm2 start ecosystem.config.js```
+
+#### Start with pm2 with update config
+```--pm2 restart ecosystem.config.js --update-env```
